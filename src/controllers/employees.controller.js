@@ -29,10 +29,16 @@ export const postEmployees = async (req, res) => {
   });
 };
 
-export const putEmployees = (req, res) => {
-  res.send("Updating employee");
+export const deleteEmployeeById = async (req, res) => {
+  const [result] = await pool.query("DELETE FROM employee WHERE id = ?", [
+    req.params.id,
+  ]);
+
+  if (result.affectedRows <= 0)
+    res.status(404).json({ message: "Employee not found" });
+  else res.sendStatus(204);
 };
 
-export const deleteEmployees = (req, res) => {
-  res.send("Deleting employee");
+export const putEmployees = (req, res) => {
+  res.send("Updating employee");
 };

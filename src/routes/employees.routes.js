@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-  deleteEmployees,
+  deleteEmployeeById,
   getEmployeeById,
   getEmployees,
   postEmployees,
@@ -17,6 +17,6 @@ router.post("/employees", postEmployees);
 
 router.put("/employees", putEmployees);
 
-router.delete("/employees", deleteEmployees);
+router.delete("/employees/:id", deleteEmployeeById);
 
 export default router;
