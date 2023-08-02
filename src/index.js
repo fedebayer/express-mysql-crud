@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use(indexRoutes);
-app.use(employeesRoutes);
+app.use("/api", employeesRoutes);
 
 app.listen(PORT);
 console.log("Server running on port", PORT);
