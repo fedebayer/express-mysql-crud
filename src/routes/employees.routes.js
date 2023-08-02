@@ -4,7 +4,7 @@ import {
   getEmployeeById,
   getEmployees,
   postEmployees,
-  putEmployees,
+  updateEmployeeById,
 } from "../controllers/employees.controller.js";
 
 const router = Router();
@@ -15,7 +15,7 @@ router.get("/employees/:id", getEmployeeById);
 
 router.post("/employees", postEmployees);
 
-router.put("/employees", putEmployees);
+router.patch("/employees/:id", updateEmployeeById);
 
 router.delete("/employees/:id", deleteEmployeeById);
 
