@@ -5,7 +5,7 @@
 
 ## Installation
 
-```
+```bash
 git clone https://github.com/fedebayer/express-mysql-crud
 cd express-mysql-crud
 docker-compose up
