@@ -31,11 +31,7 @@ export const postEmployees = async (req, res) => {
       "INSERT INTO employee(name, salary) VALUES (?, ?)",
       [name, salary]
     );
-    res.send({
-      id: rows.insertId,
-      name,
-      salary,
-    });
+    res.status(201).json({ id: rows.insertId, name, salary });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
