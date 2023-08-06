@@ -7,8 +7,10 @@ import {
 
 const app = express();
 
+// Middlewares
 app.use(express.json());
 
+// Routes
 app.use(indexRoutes);
 app.use("/api", employeesRoutes);
 
